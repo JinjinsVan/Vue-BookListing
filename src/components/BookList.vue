@@ -1,8 +1,8 @@
-<template v-for="book in books">
+<template>
     <div>
         <h1>{{ title }}</h1>
         <ul>
-            <li>{{book.name }} -- {{book.author}}</li>
+            <li v-for="book in books"  :key="book.index"> {{ book.title }} : {{book.author}}</li>
         </ul>
     </div>
 </template>
@@ -27,6 +27,7 @@ h1,h2 {
 }
 ul {
     list-style-type: none;
+    padding: 0;
 }
 li {
     display: block;
